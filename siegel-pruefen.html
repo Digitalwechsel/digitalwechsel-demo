@@ -1,0 +1,402 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Siegel prüfen – Website geprüft | Digitalwechsel</title>
+<meta name="description" content="Prüfen Sie das Siegel „Website geprüft“ von Digitalwechsel: Prüfcode eingeben und Zertifikat ansehen.">
+<link rel="icon" href="assets/digitalwechsel-favicon.svg" type="image/svg+xml">
+<style>
+@font-face{font-family:"Jakarta";src:url(assets/plus-jakarta-sans-latin-wght.woff2) format("woff2");font-weight:200 800;font-display:swap}
+@font-face{font-family:"Inter";src:url(assets/inter-latin-wght.woff2) format("woff2");font-weight:100 900;font-display:swap}
+:root{
+  --navy:#0B1D30; --navy-2:#0F2741; --navy-3:#132f4d;
+  --mint:#3EE6C1; --mint-2:#2fd3b0; --teal:#0E8A7A; --teal-ink:#0B6F64;
+  --ink:#0B1D30; --body:#3c4a5a; --muted:#64748b; --line:#e3e8ee; --bg:#f5f7fa;
+  --radius:12px; --wrap:1260px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"Inter",system-ui,sans-serif;color:var(--body);background:#fff;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3,.btn,.nav a,.eyebrow{font-family:"Jakarta","Inter",sans-serif}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 28px}
+svg.i{width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none}
+
+/* Kopf */
+.header{background:var(--navy);position:sticky;top:0;z-index:20;border-bottom:1px solid rgba(255,255,255,.06)}
+.header .wrap{display:flex;align-items:center;gap:28px;height:72px}
+.logo img{height:34px;display:block}
+.nav{display:flex;gap:26px;margin-left:auto;white-space:nowrap}
+.nav a{color:#e6edf5;font-size:14.5px;font-weight:600;display:flex;align-items:center;gap:5px}
+.nav a:hover{color:var(--mint)}
+.phone{color:#fff;font-size:14.5px;font-weight:600;display:flex;align-items:center;gap:8px;margin-left:8px;white-space:nowrap}
+.btn{display:inline-flex;align-items:center;gap:10px;font-weight:700;font-size:15px;border-radius:8px;padding:13px 22px;transition:.15s;white-space:nowrap;border:1.5px solid transparent}
+.btn-mint{background:var(--mint);color:var(--navy)}
+.btn-mint:hover{background:#5ff0d0}
+.btn-ghost{border-color:rgba(255,255,255,.85);color:#fff}
+.btn-ghost:hover{background:rgba(255,255,255,.08)}
+.header .btn{padding:10px 18px;font-size:14px}
+
+/* Hero */
+.hero{position:relative;background:radial-gradient(1200px 500px at 85% 40%,#1b4a5c 0%,rgba(11,29,48,0) 60%),linear-gradient(100deg,var(--navy) 0%,var(--navy) 42%,#123049 100%);color:#fff;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:30px;align-items:center;min-height:520px;padding-top:34px;padding-bottom:34px}
+.eyebrow{font-size:12.5px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:#cfe0ec}
+.hero h1{font-size:clamp(34px,3.7vw,50px);line-height:1.07;font-weight:800;letter-spacing:-.02em;margin:18px 0 22px}
+.hero h1 em{font-style:normal;color:var(--mint);display:block}
+.hero p.lead{font-size:16.5px;color:#d6e1ea;max-width:560px}
+.hero .actions{display:flex;gap:14px;margin:28px 0 24px;flex-wrap:wrap}
+.hero .actions .btn{font-size:14.5px;padding:12px 20px}
+.checks{display:flex;gap:20px;flex-wrap:wrap;font-size:13.5px;color:#e6edf5;white-space:nowrap}
+.checks span{display:flex;align-items:center;gap:8px}
+.checks svg{color:var(--mint);width:18px;height:18px;stroke-width:2.6}
+
+/* Laptop-Szene */
+.scene{position:relative;display:flex;align-items:center;justify-content:center}
+.hero-img{position:relative;width:118%;max-width:none;margin-right:-12%;height:auto;filter:drop-shadow(0 30px 40px rgba(0,0,0,.45))}
+.glow{position:absolute;right:-40px;top:0;width:620px;height:480px;background:radial-gradient(closest-side,rgba(62,230,193,.18),rgba(62,230,193,0));filter:blur(10px)}
+.laptop{position:absolute;right:-20px;top:40px;width:500px;transform:perspective(1400px) rotateY(-14deg) rotateX(4deg);transform-origin:right center}
+.screen{background:#0a1220;border:10px solid #1d2733;border-bottom-width:14px;border-radius:14px 14px 4px 4px;height:310px;display:grid;grid-template-columns:150px 1fr;overflow:hidden;box-shadow:0 30px 60px rgba(0,0,0,.45)}
+.tree{background:#0f1a2a;border-right:1px solid #1d2b3e;padding:14px 12px;font:11px/1.9 ui-monospace,Menlo,monospace;color:#93a4b8}
+.tree .on{background:#1c3350;color:#e6edf5;border-radius:3px;padding:0 4px;margin:0 -4px}
+.code{padding:14px 16px;font:12px/1.85 ui-monospace,Menlo,monospace;color:#c9d6e3;white-space:pre}
+.code .ln{color:#4b5d73;display:inline-block;width:22px}
+.k{color:#c792ea}.t{color:#82aaff}.s{color:#c3e88d}.f{color:#ffcb6b}.c{color:#89ddff}
+.tab{font:11px ui-monospace,Menlo,monospace;color:#9fb2c6;border-bottom:1px solid #1d2b3e;padding:0 0 8px;margin-bottom:8px}
+.base{height:16px;background:linear-gradient(#c6ccd3,#8b939c);border-radius:0 0 18px 18px;margin:0 -30px;box-shadow:0 18px 30px rgba(0,0,0,.35)}
+.mug{position:absolute;left:10px;bottom:40px;width:96px;height:112px;background:linear-gradient(90deg,#0d0f12,#23272d 55%,#0d0f12);border-radius:8px 8px 14px 14px;box-shadow:0 18px 30px rgba(0,0,0,.45);display:grid;place-items:center}
+.mug:after{content:"";position:absolute;right:-26px;top:24px;width:34px;height:52px;border:9px solid #16191d;border-left:none;border-radius:0 24px 24px 0}
+.mug img{width:56px;opacity:.9}
+.plant{position:absolute;left:-30px;top:-10px;width:180px;height:220px;background:radial-gradient(40px 70px at 40% 50%,rgba(40,90,70,.55),transparent),radial-gradient(50px 80px at 70% 35%,rgba(30,80,60,.5),transparent);filter:blur(2px)}
+
+.hero--team{background:var(--navy)}
+.hero-bg{position:absolute;top:0;bottom:0;left:24%;width:76%;height:100%;object-fit:cover;object-position:70% 15%}
+.hero--team:before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(11,29,48,1) 0%,rgba(11,29,48,1) 24%,rgba(11,29,48,.75) 38%,rgba(11,29,48,.2) 52%,rgba(11,29,48,0) 62%),linear-gradient(0deg,rgba(11,29,48,.55) 0%,rgba(11,29,48,0) 30%)}
+.hero--team .wrap{position:relative;z-index:2;min-height:600px}
+.hero-photo{position:relative;width:112%;max-width:none;margin-right:-8%;aspect-ratio:3/2;object-fit:cover;border-radius:18px;border:1px solid rgba(255,255,255,.12);box-shadow:0 30px 60px rgba(0,0,0,.45),0 0 0 6px rgba(62,230,193,.08)}
+.hero--split{background:var(--navy);padding:0}
+.hero--split .wrap{position:relative;z-index:2;grid-template-columns:1fr 1fr;min-height:600px;padding-top:56px;padding-bottom:56px}
+.hero--split .wrap>div:first-child{max-width:600px}
+.hero-side{position:absolute;top:0;right:0;bottom:0;width:62%;z-index:1}
+.hero-side img{width:100%;height:100%;object-fit:cover;object-position:50% 40%;-webkit-mask-image:linear-gradient(90deg,transparent 0%,rgba(0,0,0,.6) 14%,#000 28%);mask-image:linear-gradient(90deg,transparent 0%,rgba(0,0,0,.6) 14%,#000 28%)}
+.hero-side:after{content:"";position:absolute;left:0;right:0;bottom:0;height:4px;background:linear-gradient(90deg,transparent,var(--mint))}
+.hero-badge{position:absolute;right:40px;bottom:36px;padding:14px 18px;border-radius:12px;background:rgba(11,29,48,.72);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.14);border-left:3px solid var(--mint);color:#fff;line-height:1.35}
+.hero-badge strong{display:block;font-size:14.5px}
+.hero-badge span{font-size:13px;color:#b9cad8}
+/* Abschnitte */
+section{padding:84px 0}
+.label{font-size:12.5px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:var(--ink);font-family:"Jakarta",sans-serif}
+h2{font-size:clamp(28px,3vw,38px);line-height:1.15;color:var(--ink);font-weight:800;letter-spacing:-.02em;margin:8px 0 10px}
+.intro{color:var(--body);font-size:16px;max-width:760px}
+
+.solutions{background:var(--bg)}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:34px}
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:20px 18px 18px;display:grid;grid-template-columns:34px 1fr;column-gap:12px;transition:.2s}
+.card:hover{box-shadow:0 12px 30px rgba(11,29,48,.08);transform:translateY(-2px)}
+.card .ic{color:var(--teal);width:30px;height:30px;stroke-width:1.6;margin-top:2px}
+.card h3{font-size:16.5px;white-space:nowrap;color:var(--ink);font-weight:800;margin-bottom:6px}
+.card p{font-size:13.5px;line-height:1.55;color:var(--body)}
+.card a{grid-column:2;margin-top:14px;font-size:13.5px;font-weight:700;color:var(--teal-ink);display:inline-flex;align-items:center;gap:6px;font-family:"Jakarta",sans-serif;align-self:end;white-space:nowrap}
+.card a:hover{color:var(--teal)}
+.card .body{display:flex;flex-direction:column}
+
+/* Compliance */
+.compliance{padding:0;background:linear-gradient(90deg,#dfe8ee 0%,#eef3f6 38%,#f3f6f8 100%);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.compliance .wrap{max-width:none;padding:0;display:grid;grid-template-columns:38% 1fr 300px;align-items:center;gap:36px;min-height:340px}
+.c-visual{align-self:stretch;position:relative;overflow:hidden;min-height:300px}
+.c-visual img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:right center}
+.c-text{padding:44px 0}
+.c-text h2{font-size:clamp(24px,2.4vw,30px)}
+.c-text p{font-size:15px;max-width:620px}
+.c-list{list-style:none;margin-top:14px;display:grid;gap:7px;font-size:14.5px;color:var(--ink)}
+.c-list li{display:flex;gap:10px;align-items:flex-start}
+.c-list svg{color:var(--teal);width:18px;height:18px;stroke-width:2.6;margin-top:2px}
+.c-side{padding:30px 40px 30px 0;display:flex;flex-direction:column;align-items:center;gap:18px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;width:100%}
+.stats div{background:#fff;border:1px solid var(--line);border-radius:10px;padding:10px 6px;text-align:center;font-size:11.5px;color:var(--muted)}
+.stats b{display:block;font-family:"Jakarta",sans-serif;font-size:22px;color:var(--ink)}
+.note{background:rgba(255,255,255,.7);border:1px solid #c9dcd8;border-radius:10px;padding:14px 16px;font-size:13px;line-height:1.5;color:var(--body);display:flex;gap:10px}
+.note svg{color:var(--ink);width:20px;height:20px;margin-top:1px}
+.note b{color:var(--ink)}
+.c-cta{margin-top:20px}
+.c-cta .btn{background:var(--navy);color:#fff;padding:11px 18px;font-size:14px}
+
+/* Vertrauen: Siegel + Monitoring */
+.trust{background:linear-gradient(180deg,#eef3f6,#f6f8fa);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.trust-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:28px;margin-top:32px;align-items:stretch}
+.trust-img{margin:0;border-radius:14px;overflow:hidden;box-shadow:0 18px 40px rgba(11,29,48,.16);aspect-ratio:1672/941;align-self:center}
+.trust-img img{width:100%;height:100%;object-fit:cover;display:block}
+.trust-cards{display:grid;gap:16px}
+.tcard{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px 22px;border-top:3px solid var(--navy)}
+.tcard--mon{border-top-color:var(--mint)}
+.thead{display:flex;gap:12px;align-items:center;margin-bottom:10px}
+.thead>svg{width:34px;height:34px;color:var(--teal);stroke-width:1.6}
+.thead h3{font-size:17px;color:var(--ink);font-weight:800;line-height:1.2}
+.thead span{font-size:12.5px;color:var(--muted)}
+.tcard .c-list{margin-top:6px;font-size:14px}
+.trust-foot{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center;margin-top:22px}
+.trust-actions{display:flex;gap:12px;flex-wrap:wrap}
+.btn-navy{background:var(--navy);color:#fff}.btn-navy:hover{background:var(--navy-3)}
+.btn-line{border-color:var(--navy);color:var(--navy)}.btn-line:hover{background:#fff}
+/* Technik + Team */
+.duo .wrap{display:grid;grid-template-columns:.75fr 1px 1.85fr;gap:40px;align-items:start}
+.duo h2{font-size:clamp(24px,2.3vw,30px)}
+.duo .label{font-size:12px}
+.duo .tech{gap:18px 22px}
+.vline{background:var(--line);align-self:stretch}
+.tech{display:flex;align-items:center;gap:28px;flex-wrap:wrap;margin-top:34px}
+.tech span{font-family:"Jakarta",sans-serif;font-weight:800;font-size:18px;display:flex;align-items:center;gap:6px}
+.t-php{background:#7a86b8;color:#fff;border-radius:50%;padding:6px 14px;font-style:italic}
+.t-lar{color:#ef3b2d}
+.t-sql{color:#00758f}
+.t-shop{color:#1d2b1f}
+.t-shop i{background:#95bf47;color:#fff;font-style:normal;border-radius:4px;padding:2px 6px;font-size:13px}
+.t-js{font-weight:600!important;font-size:15px!important;color:#333}
+.t-js i{background:#f7df1e;color:#000;font-style:normal;padding:4px 5px 1px;font-size:12px;font-weight:800}
+.team{display:grid;grid-template-columns:1fr 380px;gap:30px}
+.people{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.team p{font-size:15px}
+.team .c-list{font-size:14px}
+.people{position:relative;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:minmax(0,1fr);align-items:end;height:470px;border-radius:16px;padding-top:24px!important;background:radial-gradient(220px 220px at 50% 58%,rgba(62,230,193,.22),transparent 70%),linear-gradient(180deg,#f3f6f8 0%,#e7edf1 100%);overflow:hidden;padding:0 6px}
+.people:after{content:"";position:absolute;left:6%;right:6%;bottom:70px;height:18px;background:radial-gradient(closest-side,rgba(11,29,48,.18),transparent);pointer-events:none}
+.person{position:relative;height:100%;min-height:0;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;margin:0}
+.person img{height:calc(100% - 92px);width:auto;position:relative;z-index:1;margin-bottom:8px;filter:drop-shadow(0 10px 14px rgba(11,29,48,.12))}
+.person svg{height:calc(100% - 92px);fill:#cdd6de;margin-bottom:8px}
+.person .todo{position:absolute;top:42%;font-size:12px;color:#5b6b7c;background:#fff;border-radius:20px;padding:3px 10px;box-shadow:0 2px 8px rgba(0,0,0,.08)}
+.person figcaption{position:relative;z-index:2;text-align:center;font-size:12.5px;color:var(--body);background:#fff;border:1px solid var(--line);border-radius:10px;padding:6px 12px;margin-bottom:10px;min-width:170px;white-space:nowrap}
+.person figcaption b{display:block;color:var(--ink);font-family:"Jakarta",sans-serif;font-size:14px}
+.photo{position:relative;border-radius:12px;overflow:hidden;background:linear-gradient(160deg,#dfe3e8,#b9c2cc);min-height:270px;display:flex;align-items:flex-end;box-shadow:0 14px 34px rgba(11,29,48,.18)}
+.photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 4%;transform:scale(1.9);transform-origin:50% 0}
+.photo .ph{position:absolute;inset:0;display:grid;place-items:center;color:#5b6b7c;font-size:13px;text-align:center;padding:20px}
+.photo .ph svg{width:64px;height:64px;stroke-width:1.2;display:block;margin:0 auto 8px}
+.photo .cap{position:relative;width:100%;padding:12px 14px;background:linear-gradient(transparent,rgba(11,29,48,.92));color:#fff;font-size:13px}
+.photo .cap b{display:block;font-family:"Jakarta",sans-serif;font-size:14.5px}
+
+/* Abschluss */
+.final{background:var(--navy);color:#fff;padding:48px 0}
+.final .wrap{display:flex;align-items:center;gap:30px;flex-wrap:wrap}
+.final h2{color:#fff;margin:0 0 4px}
+.final p{color:#c8d5e1}
+.final .actions{margin-left:auto;display:flex;gap:18px;flex-wrap:wrap}
+.footer{background:#08172a;color:#9fb2c6;font-size:13.5px;padding:40px 0 28px}
+.footer .wrap{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:30px}
+.footer img{height:30px;margin-bottom:12px}
+.footer h4{color:#fff;font-family:"Jakarta",sans-serif;font-size:14px;margin-bottom:10px}
+.footer a{display:block;margin:4px 0}
+.footer a:hover{color:var(--mint)}
+.footer .legal .hosted{margin-left:auto;color:#9fb2c6}
+.footer .legal{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.08);padding-top:18px;margin-top:10px;display:flex;flex-wrap:wrap;gap:12px 20px}
+
+@media (max-width:1100px){
+  .hero-bg{left:0;width:100%;object-position:80% 20%;opacity:.45}
+  .nav{display:none}
+  .hero .wrap{grid-template-columns:1fr}
+  .scene{display:none}
+  .hero-side{position:relative;width:100%;height:340px}
+  .hero-side img{-webkit-mask-image:linear-gradient(0deg,transparent 0%,#000 25%);mask-image:linear-gradient(0deg,transparent 0%,#000 25%)}
+  .hero-badge{right:16px;bottom:16px}
+  .hero--split .wrap{min-height:0}
+  .grid4{grid-template-columns:repeat(2,1fr)}
+  .compliance .wrap{grid-template-columns:1fr;padding:0 28px}
+  .c-visual{min-height:220px;margin:0 -28px}
+  .c-side{padding:0 0 30px;align-items:flex-start}
+  .duo .wrap{grid-template-columns:1fr}
+  .trust-grid,.trust-foot{grid-template-columns:1fr}.vline{display:none}
+}
+@media (max-width:640px){
+  .grid4{grid-template-columns:1fr}
+  .phone{display:none}
+  .team{grid-template-columns:1fr}
+  .footer .wrap{grid-template-columns:1fr}
+  .final .actions{margin-left:0}
+}
+
+/* Siegel prüfen */
+.v-hero{background:radial-gradient(900px 420px at 80% 40%,#1b4a5c 0%,rgba(11,29,48,0) 60%),var(--navy);color:#fff}
+.v-hero .wrap{display:grid;grid-template-columns:1.3fr .7fr;gap:40px;align-items:center;padding-top:64px;padding-bottom:64px}
+.v-hero h1{font-size:clamp(32px,3.4vw,46px);line-height:1.1;font-weight:800;letter-spacing:-.02em;margin:16px 0 18px}
+.v-hero p{font-size:16.5px;color:#d6e1ea;max-width:580px}
+.v-hero .seal{width:100%;max-width:320px;justify-self:center;filter:drop-shadow(0 24px 40px rgba(0,0,0,.5))}
+.v-form{margin-top:30px;display:flex;gap:12px;max-width:580px;flex-wrap:wrap}
+.v-form label{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.v-form input{flex:1;min-width:240px;font:600 16px/1 "Inter",sans-serif;letter-spacing:.06em;text-transform:uppercase;padding:15px 18px;border-radius:8px;border:1.5px solid rgba(255,255,255,.25);background:rgba(255,255,255,.06);color:#fff;outline:none}
+.v-form input::placeholder{color:#8ea3b8;letter-spacing:.02em;text-transform:none;font-weight:500}
+.v-form input:focus{border-color:var(--mint);background:rgba(255,255,255,.1)}
+.v-form button{cursor:pointer;font-family:"Jakarta",sans-serif}
+.v-result{margin-top:18px;max-width:580px;padding:16px 18px;border-radius:10px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-left:3px solid var(--mint);color:#d6e1ea;font-size:15px}
+.v-result[hidden]{display:none}
+.v-result strong{color:#fff}
+.v-steps{padding:80px 0;background:#fff}
+.v-steps h2,.v-about h2{font-size:clamp(26px,2.6vw,34px);color:var(--ink);font-weight:800;letter-spacing:-.01em;margin:10px 0 30px}
+.v-steps .label,.v-about .label{font-family:"Jakarta",sans-serif;font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--teal-ink)}
+.v-steps ol{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:22px;counter-reset:s}
+.v-steps li{counter-increment:s;border:1px solid var(--line);border-radius:var(--radius);padding:26px 24px;background:#fff}
+.v-steps li:before{content:counter(s);display:grid;place-items:center;width:36px;height:36px;border-radius:50%;background:var(--navy);color:var(--mint);font:800 16px "Jakarta",sans-serif;margin-bottom:16px}
+.v-steps h3{font-size:17px;color:var(--ink);margin-bottom:6px}
+.v-steps p{font-size:15px}
+.v-about{padding:80px 0;background:var(--bg)}
+.v-about .wrap{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:start}
+.v-about p{font-size:15.5px;margin-bottom:14px}
+.v-box{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px}
+.v-box h3{font-size:17px;color:var(--ink);margin-bottom:12px;display:flex;align-items:center;gap:10px}
+.v-box h3 svg{color:var(--teal);font-size:22px}
+.v-box ul{list-style:none}
+.v-box li{display:flex;gap:10px;margin:8px 0;font-size:15px}
+.v-box li svg{color:var(--teal);margin-top:4px}
+@media (max-width:900px){.v-hero .wrap,.v-about .wrap{grid-template-columns:1fr}.v-hero .seal{max-width:220px;grid-row:1}.v-steps ol{grid-template-columns:1fr}}
+
+/* Mobiles Menü */
+.menu-btn{display:none;margin-left:auto;width:44px;height:44px;border:1px solid rgba(255,255,255,.2);border-radius:10px;background:transparent;cursor:pointer;place-items:center;flex:none}
+.menu-btn span,.menu-btn span:before,.menu-btn span:after{display:block;width:20px;height:2px;background:#fff;border-radius:2px;position:relative;transition:.2s}
+.menu-btn span:before,.menu-btn span:after{content:"";position:absolute;left:0}
+.menu-btn span:before{top:-6px}.menu-btn span:after{top:6px}
+.header.open .menu-btn span{background:transparent}
+.header.open .menu-btn span:before{top:0;transform:rotate(45deg)}
+.header.open .menu-btn span:after{top:0;transform:rotate(-45deg)}
+.nav .nav-m{display:none}
+@media (max-width:1100px){
+  .menu-btn{display:grid;margin-left:0}
+  .header .wrap{gap:14px}
+  .header .phone{margin-left:auto}
+  .header .phone+.btn{margin-left:0}
+  .header.open .nav{display:flex;position:absolute;top:72px;left:0;right:0;flex-direction:column;gap:0;margin:0;padding:8px 20px 22px;background:var(--navy);border-top:1px solid rgba(255,255,255,.08);box-shadow:0 20px 40px rgba(0,0,0,.35);max-height:calc(100vh - 72px);overflow:auto}
+  .header.open .nav a{padding:14px 4px;font-size:17px;border-bottom:1px solid rgba(255,255,255,.07)}
+  .header.open .nav .nav-m{display:flex}
+  .header.open .nav .nav-m.btn{justify-content:center;margin-top:16px;border-bottom:0;color:var(--navy);font-size:16px}
+  .nav a svg{display:none}
+}
+@media (max-width:640px){
+  .header .wrap{padding:0 16px}
+  .header .btn-mint,.header .phone{display:none}
+  .menu-btn{margin-left:auto}
+  .logo img{height:30px}
+}
+@media (max-width:640px){.footer .legal .hosted{margin-left:0;flex-basis:100%}main .btn{white-space:normal;text-align:left}}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute">
+  <symbol id="arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="check" viewBox="0 0 24 24"><path d="M4 12.5l5 5L20 6.5"/></symbol>
+  <symbol id="chev" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></symbol>
+  <symbol id="phone" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></symbol>
+  <symbol id="monitor" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="13" rx="2"/><path d="M1 20h22"/></symbol>
+  <symbol id="refresh" viewBox="0 0 24 24"><path d="M3 12a9 9 0 0 1 15-6.7L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-15 6.7L3 16"/><path d="M3 21v-5h5"/></symbol>
+  <symbol id="cart" viewBox="0 0 24 24"><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/><path d="M2 3h3l2.7 12.4a2 2 0 0 0 2 1.6h8.6a2 2 0 0 0 2-1.6L22 7H6"/></symbol>
+  <symbol id="shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></symbol>
+  <symbol id="cal" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></symbol>
+  <symbol id="gear" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></symbol>
+  <symbol id="layers" viewBox="0 0 24 24"><path d="M12 2l10 5-10 5L2 7z"/><path d="M2 12l10 5 10-5"/><path d="M2 17l10 5 10-5"/></symbol>
+  <symbol id="code" viewBox="0 0 24 24"><path d="M8 6l-6 6 6 6M16 6l6 6-6 6M14 4l-4 16"/></symbol>
+  <symbol id="info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></symbol>
+  <symbol id="scale" viewBox="0 0 24 24"><path d="M12 3v18M7 21h10M5 7h14M12 5a1 1 0 1 0 0-.01"/><path d="M5 7l-3 7a3.5 3.5 0 0 0 6 0z"/><path d="M19 7l-3 7a3.5 3.5 0 0 0 6 0z"/></symbol>
+  <symbol id="monitorbell" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="13" rx="2"/><path d="M8 21h8M12 16v5"/><path d="M12 6.5a2.5 2.5 0 0 1 2.5 2.5v2l1 1.2h-7l1-1.2V9A2.5 2.5 0 0 1 12 6.5z"/></symbol>
+  <symbol id="user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></symbol>
+</svg>
+
+<header class="header">
+  <div class="wrap">
+    <a class="logo" href="index.html"><img src="assets/digitalwechsel-logo-dunkel.svg" alt="Digitalwechsel"></a>
+    <nav class="nav" id="hauptmenue" aria-label="Hauptmenü">
+      <a href="index.html">Start</a>
+      <a href="index.html#loesungen">Lösungen <svg class="i"><use href="#chev"/></svg></a>
+      <a href="index.html#projekte">Projekte</a>
+      <a href="digitalcheck.html">Digitalcheck</a>
+      <a href="index.html#team">Über uns</a>
+      <a href="siegel-pruefen.html" aria-current="page" style="color:var(--mint)">Siegel prüfen</a>
+      <a class="nav-m" href="termin.html">Kostenlosen Termin buchen</a>
+      <a class="nav-m" href="kontakt.html">Kontakt</a>
+      <a class="nav-m btn btn-mint" href="digitalcheck.html">Digitalcheck starten</a>
+    </nav>
+    <a class="phone" href="termin.html"><svg class="i"><use href="#cal"/></svg>Termin buchen</a>
+    <a class="btn btn-mint" href="digitalcheck.html">Digitalcheck starten <svg class="i"><use href="#arrow"/></svg></a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="hauptmenue" aria-label="Menü öffnen"><span></span></button>
+  </div>
+</header>
+
+<main>
+<section class="v-hero">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">Website-Prüfsiegel</span>
+      <h1>Siegel prüfen</h1>
+      <p>Websites mit dem Siegel „Website geprüft“ wurden von Digitalwechsel geprüft. Geben Sie den Prüfcode ein, um das Zertifikat zur Website anzusehen.</p>
+      <form class="v-form" id="pruefform" novalidate>
+        <label for="code">Prüfcode</label>
+        <input id="code" name="code" autocomplete="off" spellcheck="false" placeholder="Prüfcode eingeben, z. B. DW-12345" maxlength="40">
+        <button class="btn btn-mint" type="submit">Zertifikat prüfen <svg class="i"><use href="#arrow"/></svg></button>
+      </form>
+      <div class="v-result" id="ergebnis" role="status" hidden></div>
+    </div>
+    <img class="seal" src="assets/siegel-website-geprueft.png" alt="Siegel: digitalwechsel.de – Website geprüft">
+  </div>
+</section>
+
+<section class="v-steps">
+  <div class="wrap">
+    <span class="label">So funktioniert es</span>
+    <h2>In drei Schritten zum Zertifikat</h2>
+    <ol>
+      <li><h3>Siegel finden</h3><p>Das Siegel „Website geprüft“ ist auf der geprüften Website eingebunden, meist im Fußbereich.</p></li>
+      <li><h3>Prüfcode eingeben</h3><p>Den Prüfcode finden Sie beim Siegel oder im Zertifikat. Ein Klick auf das Siegel führt direkt hierher.</p></li>
+      <li><h3>Zertifikat ansehen</h3><p>Sie sehen, welche Website geprüft wurde, wann die Prüfung stattfand und ob das Siegel noch gültig ist.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="v-about">
+  <div class="wrap">
+    <div>
+      <span class="label">Über das Siegel</span>
+      <h2>Was das Siegel zeigt</h2>
+      <p>Mit dem Siegel zeigt ein Unternehmen seinen Besucherinnen und Besuchern, dass seine Website von Digitalwechsel geprüft wurde.</p>
+      <p>Nur ein Siegel mit gültigem Prüfcode ist echt. Wenn Sie hier kein passendes Zertifikat finden, sagen Sie uns bitte Bescheid.</p>
+    </div>
+    <div class="v-box">
+      <h3><svg class="i"><use href="#info"/></svg>Siegel ohne gültigen Prüfcode?</h3>
+      <ul>
+        <li><svg class="i"><use href="#check"/></svg><span>Schreiben Sie uns an <a href="mailto:support@digitalwechsel.de" style="color:var(--teal-ink);font-weight:600">support@digitalwechsel.de</a></span></li>
+        <li><svg class="i"><use href="#check"/></svg><span>Oder buchen Sie einen <a href="termin.html" style="color:var(--teal-ink);font-weight:600">Termin</a></span></li>
+        <li><svg class="i"><use href="#check"/></svg><span>Nennen Sie uns die Adresse der Website, auf der das Siegel zu sehen ist.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+</main>
+
+<script>
+(function(){
+  var f=document.getElementById('pruefform'),i=document.getElementById('code'),r=document.getElementById('ergebnis');
+  var q=new URLSearchParams(location.search).get('code'); if(q){i.value=q.slice(0,40);}
+  function show(html){r.innerHTML=html;r.hidden=false;}
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    var c=i.value.trim().toUpperCase();
+    if(!c){show('Bitte geben Sie einen Prüfcode ein.');i.focus();return;}
+    // TODO: Hier später die echte Abfrage des Zertifikats anbinden.
+    var safe=c.replace(/[^A-Z0-9-]/g,'');
+    show('<strong>Prüfcode '+safe+'</strong><br>Die Online-Prüfung wird gerade eingerichtet. Bis dahin bestätigen wir Ihnen das Zertifikat gern unter <a href="mailto:support@digitalwechsel.de" style="color:var(--mint)">support@digitalwechsel.de</a>.');
+  });
+  if(q){f.requestSubmit();}
+})();
+</script>
+
+<footer class="footer">
+  <div class="wrap">
+    <div><img src="assets/digitalwechsel-logo-dunkel.svg" alt="Digitalwechsel"><div>Digitalwechsel ist eine Marke der Lowdrinks GmbH<br>Melkerweg 11, 31683 Obernkirchen</div></div>
+    <div><h4>Bereiche</h4><a href="index.html#loesungen">Lösungen</a><a href="digitalcheck.html">Digitalcheck</a><a href="siegel-pruefen.html">Siegel prüfen</a><a href="kontakt.html">Kontakt</a></div>
+    <div><h4>Kontakt</h4><a href="termin.html">Termin buchen (Mo–Fr 9:00–18:00 Uhr)</a><a href="mailto:support@digitalwechsel.de">support@digitalwechsel.de</a><a href="tel:+4957249054001">05724 9054001</a><div style="font-size:12.5px;color:#7f93a8">Telefon nicht dauerhaft besetzt</div></div>
+    <div class="legal"><a href="#">Impressum</a><a href="#">Datenschutz</a><a href="#" data-consent-open>Cookie-Einstellungen</a><span class="hosted">🇩🇪 Gehostet in Deutschland · DSGVO-konform</span></div>
+  </div>
+</footer>
+<script src="assets/consent.js" defer></script>
+<script>
+(function(){var h=document.querySelector('.header'),b=h&&h.querySelector('.menu-btn');if(!b)return;
+b.addEventListener('click',function(){var o=h.classList.toggle('open');b.setAttribute('aria-expanded',o);b.setAttribute('aria-label',o?'Menü schließen':'Menü öffnen')});
+h.querySelector('.nav').addEventListener('click',function(e){if(e.target.closest('a')){h.classList.remove('open');b.setAttribute('aria-expanded','false')}});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&h.classList.contains('open')){h.classList.remove('open');b.setAttribute('aria-expanded','false');b.focus()}});})();
+</script>
+</body>
+</html>
