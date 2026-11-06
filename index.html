@@ -31,7 +31,7 @@ svg.i{width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:2;stroke-l
 .nav{display:flex;gap:26px;margin-left:auto;white-space:nowrap}
 .nav a{color:#e6edf5;font-size:14.5px;font-weight:600;display:flex;align-items:center;gap:5px}
 .nav a:hover{color:var(--mint)}
-.phone{color:#fff;font-size:14px;font-weight:700;display:flex;align-items:center;gap:8px;margin-left:8px;white-space:nowrap;border:1.5px solid #fff;border-radius:8px;padding:9px 16px;transition:.15s}.phone:hover{background:#fff;color:var(--navy)}
+.phone{color:#fff;font-size:14px;font-weight:700;display:flex;align-items:center;gap:8px;margin-left:8px;white-space:nowrap;position:relative;isolation:isolate;border-radius:8px;padding:10px 17px;transition:background .15s}.phone:hover{background:rgba(255,255,255,.08)}.phone:after{content:"";position:absolute;inset:0;border-radius:inherit;border:1px solid rgba(255,255,255,.22);pointer-events:none}@property --run{syntax:"<angle>";inherits:false;initial-value:0deg}@keyframes dwRun{to{--run:360deg}}.phone:before{content:"";position:absolute;inset:0;border-radius:inherit;padding:2px;pointer-events:none;background:conic-gradient(from var(--run),transparent 0 18%,#8d99a6 32%,#fff 44%,#fff 46%,transparent 50% 68%,#8d99a6 82%,#fff 94%,#fff 96%,transparent 100%);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;filter:drop-shadow(0 0 4px #fff);animation:dwRun 2.8s linear infinite}@media (prefers-reduced-motion:reduce){.phone:before{animation:none}}
 .btn{display:inline-flex;align-items:center;gap:10px;font-weight:700;font-size:15px;border-radius:8px;padding:13px 22px;transition:.15s;white-space:nowrap;border:1.5px solid transparent}
 .btn-mint{background:var(--mint);color:var(--navy)}
 .btn-mint:hover{background:#5ff0d0}
@@ -491,7 +491,7 @@ h2{font-size:clamp(28px,3vw,38px);line-height:1.15;color:var(--ink);font-weight:
         <span class="t-cf">Cloudflare</span>
         <span class="t-ga"><i><b></b><b></b><b></b></i> Google Analytics</span>
       </div>
-      <div class="tech-dsgvo"><svg class="i"><use href="#shield"/></svg><span><strong>DSGVO-konform eingesetzt:</strong> Hosting in Deutschland, Analyse nur mit Einwilligung.</span></div>
+      <div class="tech-dsgvo"><svg class="i"><use href="#shield"/></svg><span><strong>DSGVO-konform eingesetzt:</strong> Analyse und Statistik nur mit Einwilligung.</span></div>
     </div>
     <div class="vline"></div>
     <div class="team">
