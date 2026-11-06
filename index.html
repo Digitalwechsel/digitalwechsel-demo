@@ -184,17 +184,17 @@ h2{font-size:clamp(28px,3vw,38px);line-height:1.15;color:var(--ink);font-weight:
 .duo .wrap{display:grid;grid-template-columns:.75fr 1px 1.85fr;gap:40px;align-items:start}
 .duo h2{font-size:clamp(24px,2.3vw,30px)}
 .duo .label{font-size:12px}
-.duo .tech{gap:18px 22px}
+.duo .tech{gap:8px}
 .vline{background:var(--line);align-self:stretch}
-.tech{display:flex;align-items:center;gap:28px;flex-wrap:wrap;margin-top:34px}
-.tech span{font-family:"Jakarta",sans-serif;font-weight:800;font-size:18px;display:flex;align-items:center;gap:6px}
-.t-php{background:#7a86b8;color:#fff;border-radius:50%;padding:6px 14px;font-style:italic}
-.t-lar{color:#ef3b2d}
-.t-sql{color:#00758f}
-.t-shop{color:#1d2b1f}
-.t-shop i{background:#95bf47;color:#fff;font-style:normal;border-radius:4px;padding:2px 6px;font-size:13px}
-.t-js{font-weight:600!important;font-size:15px!important;color:#333}
-.t-js i{background:#f7df1e;color:#000;font-style:normal;padding:4px 5px 1px;font-size:12px;font-weight:800}.t-ts{font-weight:600!important;font-size:15px!important;color:#333}.t-ts i{background:#3178c6;color:#fff;font-style:normal;padding:4px 4px 1px;font-size:12px;font-weight:800}.t-node{color:#3c873a}.t-node i{font-style:normal;font-size:20px;line-height:1}.t-react{color:#087ea4}.t-react i{font-style:normal;font-size:20px;line-height:1;color:#58c4dc}.t-astro{color:#17191e;background:linear-gradient(90deg,#ff5d01,#c83fd6);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}.t-pg{color:#336791}.t-ai{color:#0B1D30}.t-ai i{background:linear-gradient(135deg,#2FD3B5,#6b5cff);color:#fff;font-style:normal;border-radius:6px;width:24px;height:24px;display:grid;place-items:center;font-size:13px}.t-aws{color:#232f3e;font-size:21px!important;letter-spacing:-.02em;position:relative;padding-bottom:5px}.t-aws:after{content:"";position:absolute;left:2px;right:2px;bottom:0;height:5px;border-bottom:2.5px solid #ff9900;border-radius:0 0 50% 50%}.t-cf{color:#f38020}.t-ga{color:#5f6368;font-weight:600!important;font-size:15px!important}.t-ga i{display:flex;align-items:flex-end;gap:2px;height:18px}.t-ga b{width:5px;border-radius:3px;background:#f9ab00}.t-ga b:nth-child(1){height:7px;background:#e37400}.t-ga b:nth-child(2){height:12px}.t-ga b:nth-child(3){height:18px}.tech-dsgvo{display:flex;gap:10px;align-items:flex-start;margin-top:22px;background:#e3f7f2;color:#0B6F64;border-radius:10px;padding:12px 14px;font-size:14px;line-height:1.45}.tech-dsgvo .i{flex:none;width:18px;height:18px;margin-top:1px}.tech-dsgvo strong{color:#0B1D30}
+.tech{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:30px}
+.tech .tl{display:inline-flex;align-items:center;gap:8px;font-family:"Jakarta",sans-serif;font-weight:700;font-size:15px;color:#24324a;background:#fff;border:1px solid var(--line);border-radius:999px;padding:7px 14px 7px 10px}.tech .tl img{width:22px;height:22px;flex:none}.tech .t-ai-ic{width:22px;height:22px;border-radius:6px;display:grid;place-items:center;font-style:normal;font-size:12px;color:#fff;background:linear-gradient(135deg,#2FD3B5,#6b5cff)}
+
+
+
+
+
+
+.tech-dsgvo{display:flex;gap:10px;align-items:flex-start;margin-top:22px;background:#e3f7f2;color:#0B6F64;border-radius:10px;padding:12px 14px;font-size:14px;line-height:1.45}.tech-dsgvo .i{flex:none;width:18px;height:18px;margin-top:1px}.tech-dsgvo strong{color:#0B1D30}
 .team{display:grid;grid-template-columns:1fr 380px;gap:30px}
 .people{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 .team p{font-size:15px}
@@ -481,20 +481,20 @@ h2{font-size:clamp(28px,3vw,38px);line-height:1.15;color:var(--ink);font-weight:
       <h2>Solide Technologien<br>für zuverlässige Lösungen.</h2>
       <p>Wir setzen auf bewährte, moderne Technologien – sauber entwickelt, gut wartbar und auf Ihre Anforderungen abgestimmt.</p>
       <div class="tech" aria-label="Technologien">
-        <span class="t-php">php</span>
-        <span class="t-lar">Laravel</span>
-        <span class="t-sql">MySQL</span>
-        <span class="t-shop"><i>S</i> shopify</span>
-        <span class="t-js"><i>JS</i> JavaScript</span>
-        <span class="t-ts"><i>TS</i> TypeScript</span>
-        <span class="t-node"><i>⬢</i> Node.js</span>
-        <span class="t-react"><i>⚛</i> React</span>
-        <span class="t-astro">Astro</span>
-        <span class="t-pg">PostgreSQL</span>
-        <span class="t-ai"><i>✦</i> KI &amp; LLMs</span>
-        <span class="t-aws">aws</span>
-        <span class="t-cf">Cloudflare</span>
-        <span class="t-ga"><i><b></b><b></b><b></b></i> Google Analytics</span>
+        <span class="tl"><img src="assets/tech/php.svg" alt="" width="24" height="24">PHP</span>
+        <span class="tl"><img src="assets/tech/laravel.svg" alt="" width="24" height="24">Laravel</span>
+        <span class="tl"><img src="assets/tech/mysql.svg" alt="" width="24" height="24">MySQL</span>
+        <span class="tl"><img src="assets/tech/shopify.svg" alt="" width="24" height="24">Shopify</span>
+        <span class="tl"><img src="assets/tech/javascript.svg" alt="" width="24" height="24">JavaScript</span>
+        <span class="tl"><img src="assets/tech/typescript.svg" alt="" width="24" height="24">TypeScript</span>
+        <span class="tl"><img src="assets/tech/nodedotjs.svg" alt="" width="24" height="24">Node.js</span>
+        <span class="tl"><img src="assets/tech/react.svg" alt="" width="24" height="24">React</span>
+        <span class="tl"><img src="assets/tech/astro.svg" alt="" width="24" height="24">Astro</span>
+        <span class="tl"><img src="assets/tech/postgresql.svg" alt="" width="24" height="24">PostgreSQL</span>
+        <span class="tl"><img src="assets/tech/amazonwebservices.svg" alt="" width="24" height="24">AWS</span>
+        <span class="tl"><img src="assets/tech/cloudflare.svg" alt="" width="24" height="24">Cloudflare</span>
+        <span class="tl"><img src="assets/tech/googleanalytics.svg" alt="" width="24" height="24">Google Analytics</span>
+        <span class="tl"><i class="t-ai-ic">✦</i>KI &amp; LLMs</span>
       </div>
       <div class="tech-dsgvo"><svg class="i"><use href="#shield"/></svg><span><strong>DSGVO-konform eingesetzt:</strong> Analyse und Statistik nur mit Einwilligung.</span></div>
     </div>
