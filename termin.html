@@ -31,7 +31,7 @@ svg.i{width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:2;stroke-l
 .nav{display:flex;gap:26px;margin-left:auto;white-space:nowrap}
 .nav a{color:#e6edf5;font-size:14.5px;font-weight:600;display:flex;align-items:center;gap:5px}
 .nav a:hover{color:var(--mint)}
-.phone{color:#fff;font-size:14px;font-weight:700;display:flex;align-items:center;gap:8px;margin-left:8px;white-space:nowrap;position:relative;isolation:isolate;border-radius:8px;padding:10px 17px;transition:background .15s}.phone:hover{background:rgba(255,255,255,.08)}.phone:after{content:"";position:absolute;inset:0;border-radius:inherit;border:1px solid rgba(255,255,255,.22);pointer-events:none}@property --run{syntax:"<angle>";inherits:false;initial-value:0deg}@keyframes dwRun{to{--run:360deg}}.phone:before{content:"";position:absolute;inset:0;border-radius:inherit;padding:2px;pointer-events:none;background:conic-gradient(from var(--run),transparent 0 18%,#8d99a6 32%,#fff 44%,#fff 46%,transparent 50% 68%,#8d99a6 82%,#fff 94%,#fff 96%,transparent 100%);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;filter:drop-shadow(0 0 4px #fff);animation:dwRun 2.8s linear infinite}@media (prefers-reduced-motion:reduce){.phone:before{animation:none}}
+.phone{color:#fff;font-size:14px;font-weight:700;display:flex;align-items:center;gap:8px;margin-left:8px;white-space:nowrap;position:relative;isolation:isolate;border-radius:8px;padding:10px 17px;transition:background .15s}.phone:hover{background:rgba(255,255,255,.08)}.phone:after,.nav-termin:after{content:"";position:absolute;inset:0;border-radius:inherit;border:1px solid rgba(255,255,255,.22);pointer-events:none}@property --run{syntax:"<angle>";inherits:false;initial-value:0deg}@keyframes dwRun{to{--run:360deg}}.phone:before,.nav-termin:before{content:"";position:absolute;inset:0;border-radius:inherit;padding:2px;pointer-events:none;background:conic-gradient(from var(--run),transparent 0 18%,#8d99a6 32%,#fff 44%,#fff 46%,transparent 50% 68%,#8d99a6 82%,#fff 94%,#fff 96%,transparent 100%);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;filter:drop-shadow(0 0 4px #fff);animation:dwRun 2.8s linear infinite}@media (prefers-reduced-motion:reduce){.phone:before,.nav-termin:before{animation:none}}
 .btn{display:inline-flex;align-items:center;gap:10px;font-weight:700;font-size:15px;border-radius:8px;padding:13px 22px;transition:.15s;white-space:nowrap;border:1.5px solid transparent}
 .btn-mint{background:var(--mint);color:var(--navy)}
 .btn-mint:hover{background:#5ff0d0}
@@ -376,7 +376,7 @@ h2{font-size:clamp(28px,3vw,38px);line-height:1.15;color:var(--ink);font-weight:
   .header.open .nav{display:flex;position:absolute;top:72px;left:0;right:0;flex-direction:column;gap:0;margin:0;padding:8px 20px 22px;background:var(--navy);border-top:1px solid rgba(255,255,255,.08);box-shadow:0 20px 40px rgba(0,0,0,.35);max-height:calc(100vh - 72px);overflow:auto}
   .header.open .nav a{padding:14px 4px;font-size:17px;border-bottom:1px solid rgba(255,255,255,.07)}
   .header.open .nav .nav-m{display:flex}
-  .header.open .nav .nav-m.btn{justify-content:center;margin-top:16px;border-bottom:0;color:var(--navy);font-size:16px}
+  .header.open .nav .nav-termin{position:relative;isolation:isolate;justify-content:center;align-items:center;gap:10px;margin-top:18px;border:0;border-radius:8px;font-weight:700;color:#fff;font-size:16px}.header.open .nav .nav-termin .i{display:block;width:18px;height:18px}.header.open .nav .nav-m.btn{justify-content:center;margin-top:16px;border-bottom:0;color:var(--navy);font-size:16px}
   .nav a svg{display:none}
 }
 @media (max-width:640px){
@@ -421,8 +421,9 @@ h2{font-size:clamp(28px,3vw,38px);line-height:1.15;color:var(--ink);font-weight:
       <a href="digitalcheck.html">Digitalcheck</a>
       <a href="index.html#team">Über uns</a>
       <a href="siegel-pruefen.html">Siegel prüfen</a>
-      <a class="nav-m" href="termin.html">Kostenlosen Termin buchen</a>
+      
       <a class="nav-m" href="kontakt.html">Kontakt</a>
+      <a class="nav-m nav-termin" href="termin.html"><svg class="i"><use href="#cal"/></svg>Kostenlosen Termin buchen</a>
       <a class="nav-m btn btn-mint" href="digitalcheck.html">Digitalcheck starten</a>
     </nav>
     <a class="phone" href="termin.html"><svg class="i"><use href="#cal"/></svg>Termin buchen</a>
