@@ -215,7 +215,7 @@ h2{font-size:clamp(28px,3vw,38px);line-height:1.15;color:var(--ink);font-weight:
 .photo .cap b{display:block;font-family:"Jakarta",sans-serif;font-size:14.5px}
 
 /* Abschluss */
-.logos{background:#fff;border-top:1px solid var(--line);padding:56px 0 60px;overflow:hidden}.logos-head{text-align:center;margin-bottom:30px}.logos-head h2{font-size:26px;color:var(--ink);margin-top:6px}.logos-row{display:flex;flex-wrap:wrap;justify-content:center;gap:18px}.lg{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;width:220px;height:130px;border:1px solid var(--line);border-radius:14px;background:#f8fafc;transition:.2s}.lg img{max-width:150px;max-height:46px;object-fit:contain;filter:grayscale(1);opacity:.7;transition:.2s}.lg--white img{mix-blend-mode:multiply}.lg--tall img{max-height:76px}.lg--light img{filter:brightness(0);opacity:.6}.lg span{font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}.lg:hover{background:#fff;box-shadow:0 12px 30px rgba(11,29,48,.08);border-color:#cfe9e3}.lg:hover img{filter:none;opacity:1}.lg--light:hover img{filter:brightness(0);opacity:.9}.logos-row.run{flex-wrap:nowrap;justify-content:flex-start;width:max-content;animation:dwMarquee var(--dur,40s) linear infinite}.logos-row.run:hover{animation-play-state:paused}.logos-row.run{gap:0}.logos-row.run .lg{margin-right:18px;flex:none}@keyframes dwMarquee{to{transform:translateX(-50%)}}.logos .wrap:has(.run){max-width:none;mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}@media (max-width:640px){.lg{width:calc(50% - 9px);height:110px}.lg img{max-width:120px}.logos-head h2{font-size:22px}}@media (prefers-reduced-motion:reduce){.logos-row.run{animation:none;flex-wrap:wrap;justify-content:center;width:auto}}.final{background:var(--navy);color:#fff;padding:48px 0}
+.logos{background:#fff;border-top:1px solid var(--line);padding:56px 0 60px;overflow:hidden}.logos-head{text-align:center;margin-bottom:30px}.logos-head h2{font-size:26px;color:var(--ink);margin-top:6px}.logos-row{display:flex;flex-wrap:wrap;justify-content:center;gap:18px}.lg{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;width:220px;height:110px;border:1px solid var(--line);border-radius:14px;background:#f8fafc;transition:.2s}.lg img{max-width:150px;max-height:46px;object-fit:contain;filter:grayscale(1);opacity:.7;transition:.2s}.lg--white img{mix-blend-mode:multiply}.lg--tall img{max-height:76px}.lg--light img{filter:brightness(0);opacity:.6}.lg span{font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}.lg:hover{background:#fff;box-shadow:0 12px 30px rgba(11,29,48,.08);border-color:#cfe9e3}.lg:hover img{filter:none;opacity:1}.lg--light:hover img{filter:brightness(0);opacity:.9}.logos-row.run{flex-wrap:nowrap;justify-content:flex-start;width:max-content;animation:dwMarquee var(--dur,40s) linear infinite}.logos-row.run:hover{animation-play-state:paused}.logos-row.run{gap:0}.logos-row.run .lg{margin-right:18px;flex:none}@keyframes dwMarquee{to{transform:translateX(-50%)}}.logos .wrap:has(.run){max-width:none;mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}@media (max-width:640px){.lg{width:calc(50% - 9px);height:96px}.lg img{max-width:120px}.logos-head h2{font-size:22px}}@media (prefers-reduced-motion:reduce){.logos-row.run{animation:none;flex-wrap:wrap;justify-content:center;width:auto}}.final{background:var(--navy);color:#fff;padding:48px 0}
 .final .wrap{display:flex;align-items:center;gap:30px;flex-wrap:wrap}
 .final h2{color:#fff;margin:0 0 4px}
 .final p{color:#c8d5e1}
@@ -529,18 +529,18 @@ h2{font-size:clamp(28px,3vw,38px);line-height:1.15;color:var(--ink);font-weight:
   <div class="wrap">
     <div class="logos-head">
       <span class="label">Kunden &amp; Partner</span>
-      <h2 id="logos-t">Websites und Projekte, die wir betreuen</h2>
+      <h2 id="logos-t">Marken, mit denen wir arbeiten</h2>
     </div>
     <!-- Neues Logo: Datei nach assets/kunden/ legen und hier eine Zeile ergänzen.
          Ab 6 Logos läuft die Leiste automatisch als Laufband. -->
     <div class="logos-row">
-      <a class="lg" href="https://mietova.de" target="_blank" rel="noopener"><img src="assets/kunden/mietova.png?v=2" alt="Mietova"><span>Eigenes Produkt</span></a>
-      <a class="lg" href="https://vermietvertrag.de" target="_blank" rel="noopener"><img src="assets/kunden/vermietvertrag.png" alt="Vermietvertrag"><span>Eigenes Produkt</span></a>
-      <a class="lg lg--light lg--tall" href="https://stolte-automobile.de" target="_blank" rel="noopener"><img src="assets/kunden/stolte-automobile-weiss.png" alt="Stolte Automobile"><span>Website-Relaunch</span></a>
-      <a class="lg" href="https://lowtails.de" target="_blank" rel="noopener"><img src="assets/kunden/lowtails.png" alt="Lowtails"><span>Shopify-Shop</span></a>
-      <a class="lg lg--white" href="https://www.cutandsew.de" target="_blank" rel="noopener"><img src="assets/kunden/cut-and-sew.jpg" alt="Cut &amp; Sew"><span>Shopify-Shop</span></a>
-      <a class="lg" href="https://www.kindermut.de" target="_blank" rel="noopener"><img src="assets/kunden/kindermut.png" alt="Kindermut"><span>Shopify-Shop</span></a>
-      <a class="lg lg--white" href="https://tested-shops24.de" target="_blank" rel="noopener"><img src="assets/kunden/tested-shops24.png?v=2" alt="Tested-Shops24"><span>Gütesiegel-Partner</span></a>
+      <a class="lg" href="https://mietova.de" target="_blank" rel="noopener"><img src="assets/kunden/mietova.png?v=2" alt="Mietova"></a>
+      <a class="lg" href="https://vermietvertrag.de" target="_blank" rel="noopener"><img src="assets/kunden/vermietvertrag.png" alt="Vermietvertrag"></a>
+      <a class="lg lg--light lg--tall" href="https://stolte-automobile.de" target="_blank" rel="noopener"><img src="assets/kunden/stolte-automobile-weiss.png" alt="Stolte Automobile"></a>
+      <a class="lg" href="https://lowtails.de" target="_blank" rel="noopener"><img src="assets/kunden/lowtails.png" alt="Lowtails"></a>
+      <a class="lg lg--white" href="https://www.cutandsew.de" target="_blank" rel="noopener"><img src="assets/kunden/cut-and-sew.jpg" alt="Cut &amp; Sew"></a>
+      <a class="lg" href="https://www.kindermut.de" target="_blank" rel="noopener"><img src="assets/kunden/kindermut.png" alt="Kindermut"></a>
+      <a class="lg lg--white" href="https://tested-shops24.de" target="_blank" rel="noopener"><img src="assets/kunden/tested-shops24.png?v=2" alt="Tested-Shops24"></a>
     </div>
   </div>
 </section>
