@@ -28,7 +28,8 @@
     ".rv.rv-l{translate:-48px 0}.rv.rv-r{translate:48px 0}" +
     ".rv.rv-pop{translate:0 0;scale:.6;rotate:-25deg;transition-property:opacity,scale,rotate;transition-duration:.9s}" +
     ".rv.rv-wipe{translate:0 0;clip-path:inset(0 100% 0 0 round 14px);transition-property:opacity,clip-path;transition-duration:1.2s}" +
-    ".rv.in{opacity:1;translate:0 0;scale:1;rotate:0deg;clip-path:inset(0 0 0 0 round 0)}" +
+    ".rv.in{opacity:1;translate:0 0;scale:1;rotate:0deg}" +
+    ".rv.rv-wipe.in{clip-path:inset(0 0 0 0 round 14px)}" +
     ".dw-prog{position:fixed;top:0;left:0;height:3px;width:100%;background:#2FD3B5;transform-origin:0 50%;transform:scaleX(0);z-index:200;pointer-events:none}" +
     "[data-px]{will-change:translate}";
   var st = document.createElement("style");
@@ -52,7 +53,11 @@
     }
 
     // Sonderfälle zuerst, damit sie nicht als normale Blöcke behandelt werden
-    main.querySelectorAll(".proj-img, .trust-img").forEach(function (el) { mark(el, "rv-wipe"); });
+    main.querySelectorAll(".proj-img, .trust-img").forEach(function (el) {
+      mark(el, "rv-wipe");
+      // Nach dem Aufdecken den Zuschnitt entfernen, sonst wird der Schatten abgeschnitten
+      el.addEventListener("transitionend", function (e) { if (e.propertyName === "clip-path") el.style.clipPath = "none"; });
+    });
     main.querySelectorAll(".sealband img").forEach(function (el) { mark(el, "rv-pop"); });
     main.querySelectorAll(".flag-text").forEach(function (el) { mark(el, "rv-l"); });
     main.querySelectorAll(".flag-shots").forEach(function (el) { mark(el, "rv-r", 0.15); });
