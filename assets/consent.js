@@ -1,13 +1,26 @@
 /*
  * Cookie-Einwilligung für digitalwechsel.de
  * - Notwendig: immer aktiv (z. B. Speichern dieser Auswahl).
- * - Statistik: nur nach Einwilligung. Ein Statistik-Dienst wird später hier angebunden:
- *   window.addEventListener('dw-consent', e => { if (e.detail.statistik) { ... } })
+ * - Statistik: Google Tag Manager (GTM-P6FL4DZ5). Wird erst geladen, wenn der Besucher
+ *   „Statistik“ erlaubt. Ohne Einwilligung geht keine Anfrage an Google.
  * Die Auswahl liegt im localStorage unter "dw-consent" und kann jederzeit über
  * einen Link mit dem Attribut data-consent-open geändert werden.
  */
 (function () {
-  var KEY = "dw-consent", VERSION = 1;
+  var KEY = "dw-consent", VERSION = 1, GTM = "GTM-P6FL4DZ5";
+
+  // Tag Manager nachladen, nur einmal pro Seitenaufruf
+  var gtmLoaded = false;
+  function loadGtm() {
+    if (gtmLoaded) return;
+    gtmLoaded = true;
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({ "gtm.start": Date.now(), event: "gtm.js" });
+    var s = document.createElement("script");
+    s.async = true;
+    s.src = "https://www.googletagmanager.com/gtm.js?id=" + GTM;
+    document.head.appendChild(s);
+  }
 
   function read() {
     try {
@@ -17,7 +30,11 @@
   }
   function save(statistik) {
     var v = { version: VERSION, notwendig: true, statistik: !!statistik, datum: new Date().toISOString() };
+    var before = read();
     try { localStorage.setItem(KEY, JSON.stringify(v)); } catch (e) {}
+    if (v.statistik) loadGtm();
+    // Einwilligung zurückgezogen: neu laden, damit der Tag Manager nicht weiterläuft
+    else if (gtmLoaded || (before && before.statistik)) { location.reload(); return; }
     window.dwConsent = v;
     window.dispatchEvent(new CustomEvent("dw-consent", { detail: v }));
     close();
@@ -58,11 +75,10 @@
     root.innerHTML =
       '<div class="cc-box" role="dialog" aria-modal="false" aria-labelledby="cc-t">' +
       '<h2 id="cc-t">Cookies &amp; Datenschutz</h2>' +
-      '<p>Wir verwenden nur, was für den Betrieb der Website nötig ist. Optionale Statistik setzen wir nur mit Ihrer Einwilligung ein. Ihre Auswahl können Sie jederzeit unter „Cookie-Einstellungen“ im Fußbereich ändern. Mehr in der <a href="datenschutz.html">Datenschutzerklärung</a>.</p>' +
-      '<span class="cc-host">🇩🇪 Gehostet in Deutschland</span>' +
-      '<div class="cc-opts" id="cc-opts" hidden>' +
+      '<p>Wir verwenden nur, was für den Betrieb der Website nötig ist. Statistik mit Google Tag Manager und Google Analytics setzen wir nur mit Ihrer Einwilligung ein. Ihre Auswahl können Sie jederzeit unter „Cookie-Einstellungen“ im Fußbereich ändern. Mehr in der <a href="datenschutz.html">Datenschutzerklärung</a>.</p>' +
+            '<div class="cc-opts" id="cc-opts" hidden>' +
       '<div class="cc-opt"><div><strong>Notwendig</strong><span>Grundfunktionen der Website, z. B. das Speichern dieser Auswahl. Immer aktiv.</span></div><label class="cc-sw" title="Immer aktiv"><input type="checkbox" checked disabled aria-label="Notwendig, immer aktiv"><i></i></label></div>' +
-      '<div class="cc-opt"><div><strong>Statistik</strong><span>Hilft uns zu verstehen, wie die Website genutzt wird. Nur mit Ihrer Einwilligung.</span></div><label class="cc-sw"><input type="checkbox" id="cc-stat" aria-label="Statistik erlauben"><i></i></label></div>' +
+      '<div class="cc-opt"><div><strong>Statistik</strong><span>Google Tag Manager und Google Analytics zeigen uns, wie die Website genutzt wird. Anbieter: Google. Nur mit Ihrer Einwilligung.</span></div><label class="cc-sw"><input type="checkbox" id="cc-stat" aria-label="Statistik erlauben"><i></i></label></div>' +
       '</div>' +
       '<div class="cc-btns">' +
       '<button type="button" data-cc="necessary">Nur notwendige</button>' +
@@ -94,6 +110,7 @@
   function close() { if (root) root.style.display = "none"; }
 
   window.dwConsent = read();
+  if (window.dwConsent && window.dwConsent.statistik) loadGtm();
   document.addEventListener("click", function (e) {
     var l = e.target.closest("[data-consent-open]");
     if (l) { e.preventDefault(); open(true); }
