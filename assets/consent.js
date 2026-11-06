@@ -58,7 +58,7 @@
     root.innerHTML =
       '<div class="cc-box" role="dialog" aria-modal="false" aria-labelledby="cc-t">' +
       '<h2 id="cc-t">Cookies &amp; Datenschutz</h2>' +
-      '<p>Wir verwenden nur, was für den Betrieb der Website nötig ist. Optionale Statistik setzen wir nur mit Ihrer Einwilligung ein. Ihre Auswahl können Sie jederzeit unter „Cookie-Einstellungen“ im Fußbereich ändern. Mehr in der <a href="#">Datenschutzerklärung</a>.</p>' +
+      '<p>Wir verwenden nur, was für den Betrieb der Website nötig ist. Optionale Statistik setzen wir nur mit Ihrer Einwilligung ein. Ihre Auswahl können Sie jederzeit unter „Cookie-Einstellungen“ im Fußbereich ändern. Mehr in der <a href="datenschutz.html">Datenschutzerklärung</a>.</p>' +
       '<span class="cc-host">🇩🇪 Gehostet in Deutschland</span>' +
       '<div class="cc-opts" id="cc-opts" hidden>' +
       '<div class="cc-opt"><div><strong>Notwendig</strong><span>Grundfunktionen der Website, z. B. das Speichern dieser Auswahl. Immer aktiv.</span></div><label class="cc-sw" title="Immer aktiv"><input type="checkbox" checked disabled aria-label="Notwendig, immer aktiv"><i></i></label></div>' +

@@ -514,7 +514,7 @@ h2{font-size:clamp(28px,3vw,38px);line-height:1.15;color:var(--ink);font-weight:
       '<div><label for="t-phone">Telefon</label><input id="t-phone" type="tel" autocomplete="tel" value="'+esc(st.c.phone)+'"></div>'+
       '<div class="full"><label for="t-note">Worum geht es? <span style="color:var(--muted);font-weight:500">(optional)</span></label><input id="t-note" maxlength="1000" value="'+esc(st.c.note)+'" placeholder="z. B. neue Website, Shopify-Shop, Abläufe automatisieren"></div></div>'+
       '<div class="hp" aria-hidden="true"><label>Bitte leer lassen<input id="t-hp" tabindex="-1" autocomplete="off"></label></div>'+
-      '<p class="dc-small">Bitte E-Mail oder Telefon angeben. Eins von beiden genügt. Mit dem Absenden erklären Sie sich einverstanden, dass wir Ihre Angaben zur Terminvereinbarung verarbeiten. Mehr in der <a href="#">Datenschutzerklärung</a>.</p><div class="dc-err" id="t-err" role="alert"></div>'+nav(true);
+      '<p class="dc-small">Bitte E-Mail oder Telefon angeben. Eins von beiden genügt. Mit dem Absenden erklären Sie sich einverstanden, dass wir Ihre Angaben zur Terminvereinbarung verarbeiten. Mehr in der <a href="datenschutz.html">Datenschutzerklärung</a>.</p><div class="dc-err" id="t-err" role="alert"></div>'+nav(true);
     }else{
       h='<div class="t-done"><div class="big"><svg class="i"><use href="#check"/></svg></div><h2>'+(st.preview?'Vorschau: Termin ausgewählt':'Termin gebucht')+'</h2><p style="margin-top:8px;font-size:16px">'+esc(st.svc.name)+' am '+fmt(st.slot,{weekday:'long',day:'2-digit',month:'long'})+' um '+fmt(st.slot,{hour:'2-digit',minute:'2-digit'})+' Uhr.</p><p class="hint" style="margin-top:6px">'+(st.preview?'In der Vorschau wird nichts gebucht. Auf digitalwechsel.de wird der Termin hier verbindlich eingetragen.':(st.c.email?'Sie erhalten eine Bestätigung per E-Mail mit allen Angaben.':'Bitte notieren Sie sich den Termin.'))+'</p></div>';
     }
@@ -556,7 +556,7 @@ h2{font-size:clamp(28px,3vw,38px);line-height:1.15;color:var(--ink);font-weight:
     <div><img src="assets/digitalwechsel-logo-dunkel.svg" alt="Digitalwechsel"><div>Digitalwechsel ist eine Marke der Lowdrinks GmbH<br>Melkerweg 11, 31683 Obernkirchen</div></div>
     <div><h4>Bereiche</h4><a href="index.html#loesungen">Lösungen</a><a href="digitalcheck.html">Digitalcheck</a><a href="siegel-pruefen.html">Siegel prüfen</a><a href="kontakt.html">Kontakt</a></div>
     <div><h4>Kontakt</h4><a href="termin.html">Termin buchen (Mo–Fr 9:00–18:00 Uhr)</a><a href="mailto:support@digitalwechsel.de">support@digitalwechsel.de</a><a href="tel:+4957249054001">05724 9054001</a><div style="font-size:12.5px;color:#7f93a8">Telefon nicht dauerhaft besetzt</div></div>
-    <div class="legal"><a href="#">Impressum</a><a href="#">Datenschutz</a><a href="#" data-consent-open>Cookie-Einstellungen</a><span class="hosted">🇩🇪 Gehostet in Deutschland · DSGVO-konform</span></div>
+    <div class="legal"><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a><a href="#" data-consent-open>Cookie-Einstellungen</a><span class="hosted">🇩🇪 Gehostet in Deutschland · DSGVO-konform</span></div>
   </div>
 </footer>
 <script src="assets/consent.js" defer></script>

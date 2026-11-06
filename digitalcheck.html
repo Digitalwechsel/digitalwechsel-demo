@@ -465,7 +465,7 @@ var TERMIN="termin.html";
         '<div class="full"><label for="f-name">Name / Ansprechpartner <span style="color:var(--muted);font-weight:500">(optional)</span></label><input id="f-name" autocomplete="name" value="'+esc(contact.name)+'"></div>'+
         '<div><label for="f-email">E-Mail</label><input id="f-email" type="email" autocomplete="email" value="'+esc(contact.email)+'"></div>'+
         '<div><label for="f-phone">Telefon</label><input id="f-phone" type="tel" autocomplete="tel" value="'+esc(contact.phone)+'"></div></div>'+
-        '<p class="dc-small">Wir nutzen Ihre Angaben nur, um Ihnen die Auswertung zuzuordnen und bei Rückfragen zu antworten. Mehr dazu in der <a href="#">Datenschutzerklärung</a>.</p><div class="dc-err" id="dc-err" role="alert"></div>';
+        '<p class="dc-small">Wir nutzen Ihre Angaben nur, um Ihnen die Auswertung zuzuordnen und bei Rückfragen zu antworten. Mehr dazu in der <a href="datenschutz.html">Datenschutzerklärung</a>.</p><div class="dc-err" id="dc-err" role="alert"></div>';
     }
     h+='<div class="dc-nav">'+(step>0?'<button type="button" class="btn btn-line" id="back">Zurück</button>':'<span></span>')+
        '<button type="submit" class="btn btn-dark">'+(step<N-1?'Weiter':'Auswertung ansehen')+' <svg class="i"><use href="#arrow"/></svg></button></div>';
@@ -511,7 +511,7 @@ var TERMIN="termin.html";
     <div><img src="assets/digitalwechsel-logo-dunkel.svg" alt="Digitalwechsel"><div>Digitalwechsel ist eine Marke der Lowdrinks GmbH<br>Melkerweg 11, 31683 Obernkirchen</div></div>
     <div><h4>Bereiche</h4><a href="index.html#loesungen">Lösungen</a><a href="digitalcheck.html">Digitalcheck</a><a href="siegel-pruefen.html">Siegel prüfen</a><a href="kontakt.html">Kontakt</a></div>
     <div><h4>Kontakt</h4><a href="termin.html">Termin buchen (Mo–Fr 9:00–18:00 Uhr)</a><a href="mailto:support@digitalwechsel.de">support@digitalwechsel.de</a><a href="tel:+4957249054001">05724 9054001</a><div style="font-size:12.5px;color:#7f93a8">Telefon nicht dauerhaft besetzt</div></div>
-    <div class="legal"><a href="#">Impressum</a><a href="#">Datenschutz</a><a href="#" data-consent-open>Cookie-Einstellungen</a><span class="hosted">🇩🇪 Gehostet in Deutschland · DSGVO-konform</span></div>
+    <div class="legal"><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a><a href="#" data-consent-open>Cookie-Einstellungen</a><span class="hosted">🇩🇪 Gehostet in Deutschland · DSGVO-konform</span></div>
   </div>
 </footer>
 <script src="assets/consent.js" defer></script>
